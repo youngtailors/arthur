@@ -1,24 +1,39 @@
-const webpack = require('webpack')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
+let resolve = dir => path.join(__dirname, '..', dir)
 
 module.exports = {
   entry: {
-    'content-script': path.join(__dirname, '../content_script.ts'),
+    'content-script': path.join(__dirname, '../content-script.ts'),
     background: path.join(__dirname, '../background.ts'),
+    inject: path.join(__dirname, '../inject.ts'),
   },
   output: {
     path: path.join(__dirname, '../../dist'),
-    filename: '[name].js',
+    filename: 'js/[name].js',
   },
-  optimization: {
-    splitChunks: {
-      name: 'vendor',
-      chunks: 'initial',
-    },
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     name: 'vendor',
+  //     chunks: 'initial',
+  //   },
+  // },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['vue-style-loader', 'css-loader'],
+      },
+      {
+        test: /\.styl$/,
+        use: ['vue-style-loader', 'css-loader', 'stylus-loader'],
+      },
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -26,7 +41,15 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
+    alias: {
+      // vue$: 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+    },
+  },
   plugins: [
     new CopyWebpackPlugin([{ from: path.join(__dirname, '../../static') }]),
+    new VueLoaderPlugin(),
   ],
 }
