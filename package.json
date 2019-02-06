@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "@types/node": "^10.12.21",
     "copy-webpack-plugin": "^4.6.0",
     "lerna": "^3.10.7",
     "ts-loader": "^5.3.3",
@@ -16,7 +17,8 @@
     "url": "https://github.com/youngtailors/arthur.git"
   },
   "scripts": {
-    "fb:dev": "lerna run --parallel --scope fb-arthur dev"
+    "fb:dev": "lerna run --parallel --scope fb-arthur dev",
+    "fb:build": "lerna run --parallel --scope fb-arthur build"
   },
   "workspaces": [
     "packages/*"
