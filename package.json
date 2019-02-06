@@ -1,0 +1,24 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.6.0",
+    "lerna": "^3.10.7",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.1",
+    "webpack": "^4.29.1",
+    "webpack-chrome-extension-reloader": "^1.1.2",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youngtailors/arthur.git"
+  },
+  "scripts": {
+    "fb:dev": "lerna run --parallel --scope fb-arthur dev"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

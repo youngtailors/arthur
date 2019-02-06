@@ -1,0 +1,12 @@
+{
+  "name": "fb-arthur",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Young Tailors <team@procolla.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "webpack --config src/webpack/webpack.dev.js --watch"
+  }
+}
