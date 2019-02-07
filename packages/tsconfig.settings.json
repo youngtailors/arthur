@@ -2,20 +2,24 @@
   "compilerOptions": {
     "target": "es2015",
     "module": "commonjs",
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "declarationMap": true,
-    "sourceMap": true,
-    "strict": true,
-    "composite": true,
+    "declaration": false,
+
+    "composite": false,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "preserveConstEnums": true
+    "skipLibCheck": true
   },
   "exclude": ["node_modules"]
 }

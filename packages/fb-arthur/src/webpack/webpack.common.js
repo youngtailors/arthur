@@ -31,12 +31,13 @@ module.exports = {
         use: ['vue-style-loader', 'css-loader'],
       },
       {
-        test: /\.styl$/,
+        test: /\.styl(us)?$/,
         use: ['vue-style-loader', 'css-loader', 'stylus-loader'],
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: 'ts-loader',
+        options: { appendTsSuffixTo: [/\.vue$/] },
         exclude: /node_modules/,
       },
     ],
