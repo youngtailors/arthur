@@ -27,11 +27,15 @@ export default class Markdown extends Vue {
 
   registerComponent(res: any) {
     return {
+      // We MUST change Vue default delimiter
+      // To avoid Vue detected it as expression
+      // Because, sometimes in code section for Vue or Blade template
+      // We need to write {{ }}
+      delimiters: ['{%', '%}'],
       components: {
         Custom,
       },
-      render: res.render,
-      staticRenderFns: res.staticRenderFns,
+      template: `<div class="markdown-content">${res}</div>`,
     }
   }
 
@@ -42,8 +46,7 @@ export default class Markdown extends Vue {
       .replace(/<span class="see_more_link_inner">(.+)<\/span>/gi, '')
       .replace(/(<([^>]+)>)/gi, '')
     const mdstr = md.render(this.unescape(raw))
-    const res = Vue.compile(`<div class="markdown-content">${mdstr}</div>`)
-    return this.registerComponent(res)
+    return this.registerComponent(mdstr)
   }
 }
 </script>

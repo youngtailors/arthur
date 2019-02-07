@@ -1,17 +1,17 @@
-import { highlight, LanguageDefinition, languages } from 'prismjs'
+import { highlight, LanguageDefinition, languages, highlightAll } from 'prismjs'
 const escapeHtml = require('escape-html')
+
+highlightAll()
 
 const wrap = (code: string, lang: string) => {
   if (lang === 'text') {
     code = escapeHtml(code)
   }
   const result = `<pre class="language-${lang}"><code>${code}</code></pre>`
-  console.log({ result })
   return result
 }
 
 export default (str: string, lang: string) => {
-  console.log({ str, lang })
   if (!lang) {
     return wrap(str, 'text')
   }

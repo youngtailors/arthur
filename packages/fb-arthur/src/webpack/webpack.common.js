@@ -23,6 +23,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
@@ -45,7 +52,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      vue$: 'vue/dist/vue',
+      vue$: 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     },
   },
