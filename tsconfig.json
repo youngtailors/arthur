@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // Enable experimental decorator to disable Vetur warning.
+    // With Vetur, tsconfig.json MUST in root. So sad :(
+    "experimentalDecorators": true
+  }
+}

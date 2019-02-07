@@ -23,6 +23,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
@@ -31,12 +38,13 @@ module.exports = {
         use: ['vue-style-loader', 'css-loader'],
       },
       {
-        test: /\.styl$/,
+        test: /\.styl(us)?$/,
         use: ['vue-style-loader', 'css-loader', 'stylus-loader'],
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: 'ts-loader',
+        options: { appendTsSuffixTo: [/\.vue$/] },
         exclude: /node_modules/,
       },
     ],
@@ -44,7 +52,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      // vue$: 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     },
   },

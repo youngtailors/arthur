@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.79",
+    "@types/markdown-it": "^0.0.7",
+    "@types/prismjs": "^1.9.0",
     "css-loader": "^2.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -19,7 +21,13 @@
     "vue-template-compiler": "^2.6.2"
   },
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5",
+    "escape-html": "^1.0.3",
     "markdown-it": "8.4.1",
-    "vue": "^2.6.2"
+    "prismjs": "^1.15.0",
+    "vue": "^2.6.2",
+    "vue-class-component": "^6.3.2",
+    "vue-property-decorator": "^7.3.0"
   }
 }
