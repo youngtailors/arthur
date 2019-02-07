@@ -25,7 +25,6 @@
     "babel-loader": "^8.0.5",
     "escape-html": "^1.0.3",
     "markdown-it": "8.4.1",
-    "markdown-it-highlightjs": "^3.0.0",
     "prismjs": "^1.15.0",
     "vue": "^2.6.2",
     "vue-class-component": "^6.3.2",
