@@ -1,14 +1,15 @@
 {
   "extends": "../tsconfig.settings.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": "src",
+    "rootDir": "./src",
     "outDir": "./dist",
     "target": "esnext",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
-    "allowJs": true
+    "allowJs": true,
+    "experimentalDecorators": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"]
 }
