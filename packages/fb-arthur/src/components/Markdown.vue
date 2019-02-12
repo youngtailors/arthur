@@ -53,6 +53,8 @@ export default class Markdown extends Vue {
 
 <style lang="stylus">
 .markdown-content {
+  font-size: 14px;
+
   h1 {
     font-size: 30px;
   }
@@ -79,6 +81,18 @@ export default class Markdown extends Vue {
 
   img {
     max-width: 100%;
+  }
+
+  blockquote  {
+    padding: .5em 1em;
+    background-color: #f8f8f8;
+    margin: 0;
+    border-left: 3px solid #5488c7;
+
+    p {
+      margin: 0 0 0.5rem;
+      color: #686868;
+    }
   }
 }
 </style>
