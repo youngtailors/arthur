@@ -90,7 +90,7 @@ export default class Markdown extends Vue {
     border-left: 3px solid #5488c7;
 
     p {
-      margin: 0;
+      margin: 0 0 0.5rem;
       color: #686868;
     }
   }
